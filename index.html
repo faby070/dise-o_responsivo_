@@ -1,0 +1,244 @@
+<!--<DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-witdh, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body {
+                background-color: rgb(212, 22, 53);
+                color: blue;
+            }
+            h1{
+                color: yellow;
+                text-align: center;
+            }
+
+                @media screen and (min-width: 480px){
+                    body{
+                        background-color: lightgreen;
+                        color: rgb(155,22, 233);
+                    }
+                    h1{
+                        font-size: 45px;
+                        text-align: right;
+                        color: blueviolet;
+                    } 
+                }
+        </style>
+    </head>
+    <body>
+        <h1>resize the browser window to see the effect! </h1>
+        <p>teh media query is applied if the edia type is screen, and teh  viewport width is 480px or more. </p>
+    </body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registro de Paciente</title>
+    <style>
+      /* ✅ ESTILOS BASE GENERALES */
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #005bea, #00c6fb); /* 🔵 Fondo FUERTE */
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      form {
+        width: 90%;
+        max-width: 420px;
+        background: #ffffff;
+        color: #111;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        text-align: center;
+        color: #005bea;
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+      }
+
+      .g {
+        margin-bottom: 14px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #003366;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 2px solid #005bea;
+        background: #e6f0ff;
+        font-size: 1rem;
+        color: #003366;
+        transition: 0.3s;
+      }
+
+      input::placeholder {
+        color: #5a6b7a;
+      }
+
+      input:focus,
+      select:focus {
+        outline: none;
+        border-color: #00c6fb;
+        box-shadow: 0 0 6px #00c6fb;
+      }
+
+      .acciones {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+      }
+
+      button {
+        flex: 1;
+        padding: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      /* 🔹 Colores FUERTES para los botones */
+      button[type="submit"] {
+        background: #ff0066;
+        color: #fff;
+      }
+
+      button[type="submit"]:hover {
+        background: #cc0052;
+      }
+
+      button[type="reset"] {
+        background: #00c6fb;
+        color: #fff;
+      }
+
+      button[type="reset"]:hover {
+        background: #009ec2;
+      }
+
+      /*PARA CELULARES*/
+      @media (max-width: 600px) {
+        body {
+          background: rgb(93, 8, 173);
+          padding: 20px;
+        }
+
+        form {
+          width: 100%;
+          max-width: none;
+          padding: 18px;
+        }
+
+        h1 {
+          font-size: 1.3rem;
+          color: #ff0066;
+        }
+
+        input,
+        select {
+          font-size: 1.05rem;
+          padding: 12px;
+          background: #fff0f5;
+          border: 2px solid #ff0066;
+          color: #440022;
+        }
+
+        .acciones {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        button {
+          width: 100%;
+          font-size: 1.1rem;
+          padding: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#" method="post" autocomplete="on">
+      <h1>Registro de Paciente</h1>
+
+      <div class="g">
+        <label for="nombre">Nombre *</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Ej: Ana" required />
+      </div>
+
+      <div class="g">
+        <label for="apellido">Apellido *</label>
+        <input id="apellido" name="apellido" type="text" placeholder="Ej: Pérez" required />
+      </div>
+
+      <div class="g">
+        <label for="ocupacion">Ocupación</label>
+        <input id="ocupacion" name="ocupacion" type="text" placeholder="Ej: Enfermera" />
+      </div>
+
+      <div class="g">
+        <label for="nacimiento">Fecha de nacimiento *</label>
+        <input id="nacimiento" name="nacimiento" type="date" required />
+      </div>
+      <div class="g">
+        <label for="sangre">Tipo de sangre *</label>
+        <select id="sangre" name="sangre" required>
+          <option value="">Seleccione…</option>
+          <option>O-</option>
+          <option>O+</option>
+          <option>A-</option>
+          <option>A+</option>
+          <option>B-</option>
+          <option>B+</option>
+          <option>AB-</option>
+          <option>AB+</option>
+        </select>
+      </div>
+
+      <div class="g">
+        <label for="peso">Peso (kg)</label>
+        <input
+          id="peso"
+          name="peso"
+          type="number"
+          min="0"
+          step="0.1"
+          placeholder="Ej.: 68.5"
+        />
+      </div>
+
+      <div class="acciones">
+        <button type="submit">Guardar</button>
+        <button type="reset">Limpiar</button>
+      </div>
+    </form>
+  </body>
+</html>
